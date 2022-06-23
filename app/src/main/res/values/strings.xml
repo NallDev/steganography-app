@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Steganography</string>
+    <string name="select_image">SELECT IMAGE</string>
+    <string name="encode">ENCODE</string>
+    <string name="insert_your_message">Insert your message</string>
+    <string name="password">Password</string>
+    <string name="message">Message</string>
+</resources>
