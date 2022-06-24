@@ -22,7 +22,6 @@
     <string name="still_encode">Proses Encode</string>
     <string name="not_encode">Gagal Encode</string>
     <string name="decode_here">Decode Disini</string>
-    <string name="created_by">Dibuat oleh Kelompok 7</string>
     <string name="wrong_password">Passoword salah</string>
     <string name="decode_success">Decode berhasil</string>
     <string name="not_decode">Tidak dapat decode</string>

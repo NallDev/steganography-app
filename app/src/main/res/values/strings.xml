@@ -21,7 +21,6 @@
     <string name="still_encode">Encoding process</string>
     <string name="not_encode">Encoding failed</string>
     <string name="decode_here">Decode Here</string>
-    <string name="created_by">Created by team 7</string>
     <string name="wrong_password">Wrong password</string>
     <string name="decode_success">decoding successful</string>
     <string name="not_decode">"can't" decode</string>
