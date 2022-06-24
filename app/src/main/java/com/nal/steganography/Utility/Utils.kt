@@ -1,9 +1,15 @@
 package com.nal.steganography.Utility
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
 import android.os.Environment
+import android.view.Window
+import android.widget.Button
+import androidx.core.view.WindowInsetsControllerCompat
+import com.nal.steganography.R
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -36,4 +42,58 @@ fun uriToFile(selectedImg: Uri, context: Context): File {
     inputStream.close()
 
     return myFile
+}
+
+fun lightStatusBar(window: Window, isLight : Boolean = true){
+    val wic = WindowInsetsControllerCompat(window, window.decorView)
+    wic.isAppearanceLightStatusBars = isLight
+}
+
+class LoadingDialog(private val mActivity: Activity) {
+    private lateinit var isdialog: AlertDialog
+    fun startLoading(){
+        val infalter = mActivity.layoutInflater
+        val dialogView = infalter.inflate(R.layout.custom_dialog,null)
+
+        val bulider = AlertDialog.Builder(mActivity)
+        bulider.setView(dialogView)
+        bulider.setCancelable(false)
+        isdialog = bulider.create()
+        isdialog.show()
+    }
+    fun isDismiss(){
+        isdialog.dismiss()
+    }
+
+    fun dialogSuccess() {
+        val infalter = mActivity.layoutInflater
+        val dialogView = infalter.inflate(R.layout.dialog_success, null)
+
+        val bulider = AlertDialog.Builder(mActivity)
+        bulider.setView(dialogView)
+        bulider.setCancelable(false)
+        isdialog = bulider.create()
+        isdialog.show()
+
+        val btn = isdialog.findViewById<Button>(R.id.btn_dismiss_success)
+        btn.setOnClickListener {
+            isDismiss()
+        }
+    }
+
+    fun dialogFailed() {
+        val infalter = mActivity.layoutInflater
+        val dialogView = infalter.inflate(R.layout.dialog_failed, null)
+
+        val bulider = AlertDialog.Builder(mActivity)
+        bulider.setView(dialogView)
+        bulider.setCancelable(false)
+        isdialog = bulider.create()
+        isdialog.show()
+
+        val btn = isdialog.findViewById<Button>(R.id.btn_dismiss_failed)
+        btn.setOnClickListener {
+            isDismiss()
+        }
+    }
 }

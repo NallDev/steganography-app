@@ -3,6 +3,27 @@
     <string name="select_image">SELECT IMAGE</string>
     <string name="encode">ENCODE</string>
     <string name="insert_your_message">Insert your message</string>
+    <string name="insert_image">Insert image</string>
     <string name="password">Password</string>
     <string name="message">Message</string>
+    <string name="desc_to_decode">Want to see a secret message?</string>
+    <string name="decode">DECODE</string>
+    <string name="encode_here">Encode Here</string>
+    <string name="desc_to_encode">Want to create a secret message?</string>
+    <string name="loading">Loading…</string>
+    <string name="saving">Saving…</string>
+    <string name="success">Success</string>
+    <string name="desc_success">Image encoding was successful,\nthe image has been saved to your storage</string>
+    <string name="ok">OK</string>
+    <string name="failed">Failed</string>
+    <string name="desc_failed">Request time out,\nImage encoding failed. Please try again</string>
+    <string name="not_permit">"Didn't" get permission</string>
+    <string name="still_encode">Encoding process</string>
+    <string name="not_encode">Encoding failed</string>
+    <string name="decode_here">Decode Here</string>
+    <string name="created_by">Created by team 7</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="decode_success">decoding successful</string>
+    <string name="not_decode">"can't" decode</string>
+    <string name="file_size">Image size : %s Kb</string>
 </resources>

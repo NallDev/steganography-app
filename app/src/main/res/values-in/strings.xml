@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Steganography</string>
+    <string name="select_image">PILIH IMAGE</string>
+    <string name="encode">ENCODE</string>
+    <string name="insert_your_message">Masukan pesan</string>
+    <string name="insert_image">Masukan Gambar</string>
+    <string name="password">Password</string>
+    <string name="message">Pesan</string>
+    <string name="desc_to_decode">Ingin melihat pesan rahasia?</string>
+    <string name="decode">DECODE</string>
+    <string name="encode_here">Encode Disini</string>
+    <string name="desc_to_encode">Ingin membuat pesan rahasia?</string>
+    <string name="loading">Loading…</string>
+    <string name="saving">Menyimpan…</string>
+    <string name="success">Berhasil</string>
+    <string name="desc_success">Image telah berhasil di encode,\nImage telah disimpan di penyimpanan kamu</string>
+    <string name="ok">OK</string>
+    <string name="failed">Gagal</string>
+    <string name="desc_failed">Permintaan waktu habis,\nImage gagal di encode. Silahkan coba lagi</string>
+    <string name="not_permit">Tidak mendapatkan permission.</string>
+    <string name="still_encode">Proses Encode</string>
+    <string name="not_encode">Gagal Encode</string>
+    <string name="decode_here">Decode Disini</string>
+    <string name="created_by">Dibuat oleh Kelompok 7</string>
+    <string name="wrong_password">Passoword salah</string>
+    <string name="decode_success">Decode berhasil</string>
+    <string name="not_decode">Tidak dapat decode</string>
+    <string name="file_size">Ukuran image : %s Kb</string>
+</resources>
