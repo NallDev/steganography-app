@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,9 +22,9 @@ import com.ayush.imagesteganographylibrary.Text.AsyncTaskCallback.TextEncodingCa
 import com.ayush.imagesteganographylibrary.Text.ImageSteganography
 import com.ayush.imagesteganographylibrary.Text.TextEncoding
 import com.nal.steganography.R
-import com.nal.steganography.Utility.LoadingDialog
-import com.nal.steganography.Utility.lightStatusBar
-import com.nal.steganography.Utility.uriToFile
+import com.nal.steganography.utility.LoadingDialog
+import com.nal.steganography.utility.lightStatusBar
+import com.nal.steganography.utility.uriToFile
 import com.nal.steganography.databinding.ActivityMainBinding
 import java.io.File
 import java.io.FileOutputStream
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity(), TextEncodingCallback, View.OnClickList
     private var filepath: Uri? = null
     private var encodedImage: Bitmap? = null
     private var originalImage: Bitmap? = null
-
+    private val loading = LoadingDialog(this)
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity(), TextEncodingCallback, View.OnClickList
         }
 
         binding.btnOpen.setOnClickListener(this)
-        binding.btnDecode.setOnClickListener(this)
+        binding.btnEncode.setOnClickListener(this)
         binding.tvDecode.setOnClickListener(this)
     }
 
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity(), TextEncodingCallback, View.OnClickList
                 openGalley()
             }
 
-            R.id.btn_decode -> {
+            R.id.btn_encode -> {
                 tryEncode()
             }
 
@@ -113,7 +114,6 @@ class MainActivity : AppCompatActivity(), TextEncodingCallback, View.OnClickList
     }
 
     private fun tryEncode() {
-        val loading = LoadingDialog(this)
         val secretKey = binding.etPassword
         val message = binding.etMessage
         if (filepath != null) {
@@ -163,23 +163,18 @@ class MainActivity : AppCompatActivity(), TextEncodingCallback, View.OnClickList
     private fun saveToStorage(originalImage: Bitmap?) {
         val number1 = Random.nextInt(1, 1000)
         val number2 = Random.nextInt(1, 1000)
-        val fOut: OutputStream
         val name = "Encoded$number1$number2.PNG"
-        val file = File(
-            Environment.getExternalStoragePublicDirectory(
+
+        val storeDirectory = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES
-            ), name
-        )
+            )
+        Log.d("TAG", "onCreate: $storeDirectory")
+        val file = File(storeDirectory, name)
+        val stream: OutputStream = FileOutputStream(file)
+        originalImage?.compress(Bitmap.CompressFormat.PNG, 10, stream)
+        stream.flush()
+        stream.close()
 
-        fOut = FileOutputStream(file)
-        originalImage?.compress(
-            Bitmap.CompressFormat.PNG,
-            10,
-            fOut
-        )
-
-        fOut.flush()
-        fOut.close()
         Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
             mediaScanIntent.data = Uri.fromFile(file)
             this.sendBroadcast(mediaScanIntent)

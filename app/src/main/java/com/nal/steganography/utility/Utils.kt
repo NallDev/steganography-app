@@ -1,4 +1,4 @@
-package com.nal.steganography.Utility
+package com.nal.steganography.utility
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -52,13 +52,13 @@ fun lightStatusBar(window: Window, isLight : Boolean = true){
 class LoadingDialog(private val mActivity: Activity) {
     private lateinit var isdialog: AlertDialog
     fun startLoading(){
-        val infalter = mActivity.layoutInflater
-        val dialogView = infalter.inflate(R.layout.custom_dialog,null)
+        val inflater = mActivity.layoutInflater
+        val dialogView = inflater.inflate(R.layout.custom_dialog,null)
 
-        val bulider = AlertDialog.Builder(mActivity)
-        bulider.setView(dialogView)
-        bulider.setCancelable(false)
-        isdialog = bulider.create()
+        val builder = AlertDialog.Builder(mActivity)
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+        isdialog = builder.create()
         isdialog.show()
     }
     fun isDismiss(){
@@ -66,13 +66,13 @@ class LoadingDialog(private val mActivity: Activity) {
     }
 
     fun dialogSuccess() {
-        val infalter = mActivity.layoutInflater
-        val dialogView = infalter.inflate(R.layout.dialog_success, null)
+        val inflater = mActivity.layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_success, null)
 
-        val bulider = AlertDialog.Builder(mActivity)
-        bulider.setView(dialogView)
-        bulider.setCancelable(false)
-        isdialog = bulider.create()
+        val builder = AlertDialog.Builder(mActivity)
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+        isdialog = builder.create()
         isdialog.show()
 
         val btn = isdialog.findViewById<Button>(R.id.btn_dismiss_success)
@@ -82,13 +82,13 @@ class LoadingDialog(private val mActivity: Activity) {
     }
 
     fun dialogFailed() {
-        val infalter = mActivity.layoutInflater
-        val dialogView = infalter.inflate(R.layout.dialog_failed, null)
+        val inflater = mActivity.layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_failed, null)
 
-        val bulider = AlertDialog.Builder(mActivity)
-        bulider.setView(dialogView)
-        bulider.setCancelable(false)
-        isdialog = bulider.create()
+        val builder = AlertDialog.Builder(mActivity)
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+        isdialog = builder.create()
         isdialog.show()
 
         val btn = isdialog.findViewById<Button>(R.id.btn_dismiss_failed)

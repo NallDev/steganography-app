@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.nal.steganography.R
-import com.nal.steganography.Utility.lightStatusBar
+import com.nal.steganography.utility.lightStatusBar
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {

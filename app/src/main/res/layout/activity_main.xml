@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_message" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_decode"
+        android:id="@+id/btn_encode"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -149,10 +149,10 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_decode"
+        app:layout_constraintEnd_toEndOf="@+id/btn_encode"
         app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="@+id/btn_decode"
-        app:layout_constraintTop_toBottomOf="@+id/btn_decode"
+        app:layout_constraintStart_toStartOf="@+id/btn_encode"
+        app:layout_constraintTop_toBottomOf="@+id/btn_encode"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -165,7 +165,7 @@
         android:textColor="@color/blue"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/btn_decode"
+        app:layout_constraintEnd_toEndOf="@+id/btn_encode"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />

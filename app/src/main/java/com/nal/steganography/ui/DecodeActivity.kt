@@ -13,8 +13,8 @@ import com.ayush.imagesteganographylibrary.Text.AsyncTaskCallback.TextDecodingCa
 import com.ayush.imagesteganographylibrary.Text.ImageSteganography
 import com.ayush.imagesteganographylibrary.Text.TextDecoding
 import com.nal.steganography.R
-import com.nal.steganography.Utility.lightStatusBar
-import com.nal.steganography.Utility.uriToFile
+import com.nal.steganography.utility.lightStatusBar
+import com.nal.steganography.utility.uriToFile
 import com.nal.steganography.databinding.ActivityDecodeBinding
 
 class DecodeActivity : AppCompatActivity(), TextDecodingCallback, View.OnClickListener {
@@ -85,7 +85,7 @@ class DecodeActivity : AppCompatActivity(), TextDecodingCallback, View.OnClickLi
             if (!imageSteganography.isSecretKeyWrong){
                 binding.etMessage.setText(imageSteganography.message)
                 binding.etPassword.text = null
-                Toast.makeText(this, this.getString(R.string.decode), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.decode_success), Toast.LENGTH_SHORT).show()
             }
             else{
                 binding.etMessage.text = null

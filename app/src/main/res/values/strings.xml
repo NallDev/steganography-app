@@ -10,7 +10,6 @@
     <string name="decode">DECODE</string>
     <string name="encode_here">Encode Here</string>
     <string name="desc_to_encode">Want to create a secret message?</string>
-    <string name="loading">Loading…</string>
     <string name="saving">Saving…</string>
     <string name="success">Success</string>
     <string name="desc_success">Image encoding was successful,\nthe image has been saved to your storage</string>
